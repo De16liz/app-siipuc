@@ -70,4 +70,9 @@ class app{
     static function get_name_seccion():string {
         return self::$name_seccion;
     }
+
+    static function echo_json($value):void{
+        header('Content-type: application/json');
+        echo json_encode($value); exit;
+    }
 }

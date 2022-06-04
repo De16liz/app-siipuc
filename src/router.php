@@ -28,8 +28,8 @@ switch ($url_1) {
         break;
     case 'post':
         $controlador =  ($url_explpde[1] ?? '') . ".php";
-        $path = __DIR__ . "/Controller/$controlador";
-
+        $path = __DIR__ . "/Controllers/$controlador";
+        
         if (file_exists($path)){
             require $path;
         }else{
