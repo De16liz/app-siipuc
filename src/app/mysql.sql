@@ -1,6 +1,6 @@
 drop table if exists `bautizados`;
 create table `bautizados` (
-	`id` int(11) not null auto_increment,
+	`id` int primary key auto_increment,
 	`nombre` varchar(50) not null,
 	`apellido` varchar(50) not null,
 	`fecha_bautismo` date not null,
@@ -9,7 +9,7 @@ create table `bautizados` (
 
 drop table if exists `defunciones`;
 create table `defunciones` (
-	`id` int(11) not null,
+	`id` int primary key auto_increment,
 	`nombre` varchar(50) not null,
 	`apellido` varchar(50) not null,
 	`fecha_fallecido` date not null
@@ -17,14 +17,14 @@ create table `defunciones` (
 
 drop table if exists `eventos`;
 create table `eventos` (
-	`id` int(11) not null,
+	`id` int primary key auto_increment,
 	`programa` varchar(50) not null,
 	`fecha` date not null
 );
 
 drop table if exists `matrimonios`;
 create table `matrimonios` (
-	`id` int(11) not null,
+	`id` int primary key auto_increment,
 	`nombre-esposo` varchar(50) null,
 	`nombre-esposa` varchar(50) null,
 	`tiempo-casados` int(3) null,
@@ -33,7 +33,7 @@ create table `matrimonios` (
 
 drop table if exists `membresias`;
 create table `membresias` (
-	`id` int(10) not null,
+	`id` int primary key auto_increment,
 	`cedula` int(11) not null,
 	`nombre` varchar(50) not null,
 	`nacimiento` date null,
@@ -46,7 +46,7 @@ create table `membresias` (
 
 drop table if exists `pastor`;
 create table `pastor` (
-	`id` int(10) not null,
+	`id` int primary key auto_increment,
 	`tipo_licencia` int(11) not null,
 	`nombre` varchar(50) not null,
 	`nacimiento` date not null,
@@ -56,7 +56,7 @@ create table `pastor` (
 
 drop table if exists `presentacion_niños`;
 create table `presentacion_niños` (
-	`id` int(11) not null,
+	`id` int primary key auto_increment,
 	`fecha_nacimiento` date not null,
 	`nombre_padre` varchar(50) not null,
 	`nombre_madre` varchar(50) not null
@@ -64,14 +64,14 @@ create table `presentacion_niños` (
 
 drop table if exists `registros`;
 create table `registros` (
-	`id` int(10) not null,
+	`id` int primary key auto_increment,
 	`rg_pastor` varchar(50) not null,
 	`rg_feligrez` varchar(50) not null
 );
 
 drop table if exists `tipo_licencia`;
 create table `tipo_licencia` (
-	`id` int(11) not null,
+	`id` int primary key auto_increment,
 	`predicador` int(11) not null,
 	`local` int(11) not null,
 	`general` int(11) not null,
@@ -80,7 +80,7 @@ create table `tipo_licencia` (
 
 drop table if exists `usuarios`;
 create table `usuarios` (
-	`id` int(3) not null,
+	`id` int primary key auto_increment,
 	`nombre` varchar(50) not null,
 	`apellido` varchar(50) not null,
 	`usuario` varchar(10) not null,
