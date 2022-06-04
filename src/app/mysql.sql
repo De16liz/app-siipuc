@@ -7,14 +7,6 @@ create table `bautizados` (
 	`pastor_bautismo` varchar(50) not null
 );
 
-drop table if exists `defunciones`;
-create table `defunciones` (
-	`id` int primary key auto_increment,
-	`nombre` varchar(50) not null,
-	`apellido` varchar(50) not null,
-	`fecha_fallecido` date not null
-);
-
 drop table if exists `eventos`;
 create table `eventos` (
 	`id` int primary key auto_increment,
@@ -44,16 +36,6 @@ create table `membresias` (
 	`profesion` varchar(50) null
 );
 
-drop table if exists `pastor`;
-create table `pastor` (
-	`id` int primary key auto_increment,
-	`tipo_licencia` int(11) not null,
-	`nombre` varchar(50) not null,
-	`nacimiento` date not null,
-	`correo` varchar(80) not null,
-	`telefono` varchar(11) not null
-);
-
 drop table if exists `presentacion_niños`;
 create table `presentacion_niños` (
 	`id` int primary key auto_increment,
@@ -67,15 +49,6 @@ create table `registros` (
 	`id` int primary key auto_increment,
 	`rg_pastor` varchar(50) not null,
 	`rg_feligrez` varchar(50) not null
-);
-
-drop table if exists `tipo_licencia`;
-create table `tipo_licencia` (
-	`id` int primary key auto_increment,
-	`predicador` int(11) not null,
-	`local` int(11) not null,
-	`general` int(11) not null,
-	`ordenacion` int(11) not null
 );
 
 drop table if exists `usuarios`;
