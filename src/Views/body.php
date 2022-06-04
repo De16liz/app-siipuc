@@ -14,9 +14,9 @@
 	<script src=" <?php  \App\html::echo_js_path("jssor.slider.min") ?>" ></script>
 </head>
 <body>
-    <?php require $app_path_view; ?>
-    
-    
+    <?php //require $app_path_view; ?>
+    <?php include('menu.php'); ?>
+    <?php include('public/contenido.php'); ?>
 
     <footer class="sticky-footer bg-white">
         

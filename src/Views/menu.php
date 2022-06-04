@@ -1,7 +1,7 @@
 <header id="header">
 		<nav class="menu">
 			<div class="logo">
-				<a href="#"><img src="img/ipuc.png" alt=""></a>
+				<a href="#"><img src="public/img/ipuc.png" alt=""></a>
 				<a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
 			</div>
 			<div class="enlaces" id="enlaces"> 
