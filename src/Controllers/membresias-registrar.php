@@ -3,10 +3,10 @@
 use App\app;
 use App\db;
 
-$res = db::connect();
+db::connect();
 
 //app::echo_json($_POST);
-// $res = db::insert($_POST, 'usuarios');
+$res = db::insert($_POST, 'membresias');
 
 if ($res){
     // SI se regiostrp

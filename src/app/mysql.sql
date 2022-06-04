@@ -17,10 +17,10 @@ create table `eventos` (
 drop table if exists `matrimonios`;
 create table `matrimonios` (
 	`id` int primary key auto_increment,
-	`nombre-esposo` varchar(50) null,
-	`nombre-esposa` varchar(50) null,
-	`tiempo-casados` int(3) null,
-	`fecha-casados` date not null
+	`nombre_esposo` varchar(50) null,
+	`nombre_esposa` varchar(50) null,
+	`tiempo_casados` int(3) null,
+	`fecha_casados` date not null
 );
 
 drop table if exists `membresias`;
