@@ -1,11 +1,6 @@
-<?php
-
-include ('menu.php');
-?>
-
 <main>
 	<article>
-    <div class='row '> <!--fila 2-->
+    <div class='row'> <!--fila 2-->
 		<center>
 		<div class="col-sm-3 ">
 		</div>

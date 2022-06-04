@@ -8,10 +8,10 @@ app::loadData();
 
 switch ($url) {
     case '':
-        require "Views/inicio.php";           
+        app::requiere_view('inicio');           
         break;
     case 'servicios':
-        require "Views/servicios.php";           
+        app::requiere_view('servicios');          
         break;
     case 'eventos':
         require "Views/eventos.php";           

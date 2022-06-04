@@ -8,7 +8,7 @@ use App\app;
         <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
     </div>
     <div class="enlaces" id="enlaces">
-        <?php foreach (app::getMune() as $menu){ ?>
+        <?php foreach (app::get_menu() as $menu){ ?>
             <a href="<?php $menu->echoLink() ?>"><i class="<?php $menu->echoICon() ?>" aria-hidden="true"></i><?php $menu->echoValue() ?></a>
         <?php } ?>
     </div>

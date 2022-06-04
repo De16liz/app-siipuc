@@ -15,7 +15,7 @@
         <?php require  __DIR__ . './Shared/header.view.php' ?>
     </header>
     <!-- *******  Contenido por vista  *********-->
-    <section>
+    <section class="page-<?php echo \App\app::get_name_seccion(); ?>">
 
         <?php require $app_path_view; ?>
 

@@ -1,5 +1,5 @@
 
-<main>
+<main class="content-card">
         <article>
 
             <div class='row '> <!--fila 2-->
