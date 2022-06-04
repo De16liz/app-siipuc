@@ -17,7 +17,9 @@ switch ($url) {
     case 'autenticar':
         require "Views/autenticar.php";           
         break;
-    
+    case 'registro':
+        require "Views/registro.php";           
+        break;
     default:
         app::requiere_view("not-found");
         break;
