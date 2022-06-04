@@ -11,5 +11,9 @@ class app{
         $app_path_view = "src/Views/$path.php";
         require __DIR__. "/Views/body.php";
     }
+
+    
+
+    
     
 }
