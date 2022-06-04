@@ -1,17 +1,13 @@
-<?php
-
-include ('menu.php');
-?>
 
 <main>
-		<article>
+        <article>
 
-			<div class='row '> <!--fila 2-->
-			<div class="col-sm-3 ">
-			</div>
+            <div class='row '> <!--fila 2-->
+            <div class="col-sm-3 ">
+            </div>
 
-			<div class="col-xs-12 col-sm-6 ">	
-				<div class="col-xs-12 ">
+            <div class="col-xs-12 col-sm-6 ">	
+                <div class="col-xs-12 ">
 
 <center>    
     <h1>Iniciar sesión</h1>
@@ -53,3 +49,4 @@ include ('menu.php');
 </div>
 <div class="col-sm-3 ">
 </div>
+</main>

@@ -7,29 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
     <title>Ipuc</title>
-    <link rel="stylesheet" href="<?php  \App\html::echo_css_path("body") ?>">
-    <link rel="stylesheet" href="<?php  \App\html::echo_css_path("bootstrap.min") ?>">
-	<link rel="stylesheet" href="<?php  \App\html::echo_css_path("estilos") ?>">
-	<link rel="stylesheet"  href="<?php  \App\html::echo_css_path("fonts") ?>">
-	<script src=" <?php  \App\html::echo_js_path("jssor.slider.min") ?>" ></script>
+    <?php require  __DIR__ . './Shared/styles.view.php' ?>
 </head>
 <body>
-    <?php //require $app_path_view; ?>
-    <?php include('menu.php'); ?>
-    <?php include('public/contenido.php'); ?>
+    <!-- *********** La cabecera de la pagian **********-->
+    <header>
+        <?php require  __DIR__ . './Shared/header.view.php' ?>
+    </header>
+    <!-- *******  Contenido por vista  *********-->
+    <section>
 
+        <?php require $app_path_view; ?>
+
+    </section>
+
+    <!-- *********  El footer *************** -->
     <footer class="sticky-footer bg-white">
-        
-        <div class="footer texto">
-            <span>© 2022 Copyright - Todos los derechos reservados.</span>
-        </div>
-        
-        <div class="footer texto">
-            <span>Desarrollado por Deimi L. Gomez D.</span>
-        </div>   
+        <?php require __DIR__ . './Shared/footer.view.php' ?>
     </footer>
-    <script type="text/javascript" src=" <?php  \App\html::echo_js_path("jquery-3.2.1.min") ?>"></script>
-	<script type="text/javascript" src=" <?php  \App\html::echo_js_path("headroom.min") ?>"></script>
-	<script type="text/javascript" src=" <?php  \App\html::echo_js_path("menu") ?>"></script>
+    <!-- ********* Aqui van los scripts -->
+
+    <?php require  __DIR__ . './Shared/scripts.view.php' ?>
 </body>
 </html>

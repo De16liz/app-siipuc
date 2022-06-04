@@ -3,7 +3,9 @@
 use App\app;
 
 $url = $_GET["url"] ?? "";
-//echo $url;
+
+app::loadData();
+
 switch ($url) {
     case '':
         require "Views/inicio.php";           
@@ -15,7 +17,7 @@ switch ($url) {
         require "Views/eventos.php";           
         break;
     case 'autenticar':
-        require "Views/autenticar.php";           
+        app::requiere_view('autenticar');           
         break;
     case 'registro':
         require "Views/registro.php";
