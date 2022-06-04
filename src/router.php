@@ -14,13 +14,12 @@ switch ($url) {
         app::requiere_view('servicios');          
         break;
     case 'eventos':
-        require "Views/eventos.php";           
+        app::requiere_view("eventos");         
         break;
     case 'autenticar':
         app::requiere_view('autenticar');           
         break;
     case 'registro':
-        require "Views/registro.php";
         app::requiere_view("registro"); 
         break;
     default:

@@ -21,10 +21,11 @@ class app{
     static function loadData():void{
 
         self::$menu_list = [
-            (new MenuItem('Blob', 'fa fa-briefcase', 'blob')),
+            (new MenuItem('Blog', 'fa fa-briefcase', '')),
             (new MenuItem('Servicios', 'fa fa-home', 'servicios')),
             (new MenuItem('Eventos', 'fa fa-briefcase', 'eventos')),
             (new MenuItem('Iniciar sesión', 'fa fa-briefcase', 'autenticar')),
+            (new MenuItem('Registros', 'fa fa-briefcase', 'registro')),
         ];
 
         self::$css_list[] = "public/css/pages/.globales.css";
