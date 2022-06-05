@@ -28,6 +28,13 @@
 
 </head>
 <body class="pg-login">
+    <!-- ****************************************************************** -->
+    <!-- ********* Dialog de mensajes del sistem ********** -->
+    <!-- Button trigger modal -->
+    <?php if (!empty( $_SESSION['app-message'] ?? '')){ require __DIR__ . '/Shared/message.view.php';    } ?>
+    <!-- ****************************************************************** -->
+    <!-- ****************************************************************** -->
+
     <header>
         
     </header>
@@ -35,7 +42,7 @@
     <!-- Sección amostrar por vista -->
     <section>
         <div class="card" style="width: 20rem;">
-            <form class="card-body" method="POST">
+            <form class="card-body" method="POST" action="<?php \App\html::echo_path_obsolute('post/usuario-registrar'); ?>">
                 <h3 class="card-title">Registro de usuario</h3>
                 <div class="card-body">
 
@@ -46,7 +53,7 @@
                         <span class="input-group-text" id="basic-addon1">
                             <span class="material-icons">badge</span>
                         </span>
-                        <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+                        <input name="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
                     <!-- Input apellido -->
@@ -54,7 +61,7 @@
                         <span class="input-group-text" id="basic-addon1">
                             <span class="material-icons">badge</span>
                         </span>
-                        <input type="text" class="form-control" placeholder="Apellido" aria-label="Username" aria-describedby="basic-addon1">
+                        <input name="apellido" type="text" class="form-control" placeholder="Apellido" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
                     <!-- Input nombre de usuario -->
@@ -62,7 +69,7 @@
                         <span class="input-group-text" id="basic-addon1">
                             <span class="material-icons">person</span>
                         </span>
-                        <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+                        <input name="usuario" type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     
                     <!-- Input Contraseña -->
@@ -70,12 +77,12 @@
                         <span class="input-group-text" id="basic-addon1">
                             <span class="material-icons">password</span>
                         </span>
-                        <input type="text" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
+                        <input name="password" type="text" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="button" class="btn btn-success">Iniciar registro</button>
+                    <button type="submit" class="btn btn-success">Iniciar registro</button>
                 </div>
             </form>
         </div>
@@ -91,12 +98,5 @@
     <!-- ****************************************************************** -->
     <!-- ****************************************************************** -->
 
-
-    <!-- ****************************************************************** -->
-    <!-- ********* Dialog de mensajes del sistem ********** -->
-    <!-- Button trigger modal -->
-    <?php if (!empty($_ENV['app-message'] ?? '')){ require __DIR__ . '/Shared/message.view.php';    } ?>
-    <!-- ****************************************************************** -->
-    <!-- ****************************************************************** -->
 </body>
 </html>

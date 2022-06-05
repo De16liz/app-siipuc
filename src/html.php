@@ -6,6 +6,10 @@ class html{
     public static function echo_path_obsolute($path):void{
        echo router::generar_ruta_abosoluta($path);
     }
+    
+    public static function echo_path($path):void{
+       echo router::generar_ruta_abosoluta($path);
+    }
 
     static function echo_css_path(string $path):void{
         self::echo_path_obsolute( "public/css/$path.css" );

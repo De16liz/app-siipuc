@@ -18,28 +18,11 @@ class app{
     
     static function run():void {
         
-
-        // Validmos el la sesión
-        if (session_status() != 2) session_start();
-        
-
-        // self::echo_json(self::esta_logeado());
-
-        if (!self::esta_logeado() && ($_GET['url'] ?? '') != "login" && ($_GET['url'] ?? '') != "registrarse"){
-            self::ir_a('login');
-        }
-        
-        if (db::connect()){
-            
-        }else{
-            self::send_message("Error con la conexión de la base de datos\nRevise los datos de conexion");
-        }
-        
         require __DIR__ . '/run.php';
     }
     
     static function send_message(string $message):void{
-        $_ENV['app-message'] = $message;
+        $_SESSION['app-message'] = $message;
     }
 
     static function requiere_view(string $path){

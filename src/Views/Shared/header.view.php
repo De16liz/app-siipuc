@@ -6,7 +6,7 @@ use App\{app, html};
 <div class="app-header">
 
     <div class="app-header-icon">
-        <a href="#">
+        <a href="<?php html::echo_path_obsolute('') ?>">
             <img src="<?php html::echo_img_path('ipuc.png') ?>" alt="">
         </a>
     </div>
@@ -49,7 +49,7 @@ use App\{app, html};
 
         <!-- ************ Salir, inicar sesión, registrarse -->
         <li class="nav-item app-header-nav-item">
-            <a class="nav-link disabled">
+            <a class="nav-link" href="<?php html::echo_path('post/usuario-cerrar-sesion') ?>">
                 <span class="material-icons">logout</span>
                 <span>Cerrar sesión</span>
             </a>

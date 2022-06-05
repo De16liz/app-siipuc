@@ -6,14 +6,31 @@ use App\db;
 
 $url = trim($_GET['url'] ?? '', '/');
 
+// Validmos el la sesión
+if (session_status() != 2) session_start();
+
+if (db::connect()){
+            
+}else{
+    app::send_message("Error con la conexión de la base de datos\nRevise los datos de conexion");
+}
+
+// self::echo_json(self::esta_logeado());
+
+if (!app::esta_logeado() && $url != "login" && $url != "registrarse" && $url != 'post/usuario-registrar' && $url != 'post/usuario-autenticar'){
+    app::ir_a('login');
+}
+        
+
+
 $url_explode = explode('/', $url);
 
 if ($url_explode[0] == 'post'){
     // Quiere decir que es un peticio de controlador
-    $controlador = "Controllers/" . ($url_explode[1] ?? '') . ".php";
+    $controlador = __DIR__ . "/Controllers/" . ($url_explode[1] ?? '') . ".php";
 
     if (file_exists($controlador)){
-        require __DIR__ . "/$controlador";
+        require $controlador;
     }else{
         // En caso de que el controlador no exista
         echo "El contralador no exists [" . $url_explode[1] ?? '' . "]\n";
