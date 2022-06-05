@@ -78,5 +78,33 @@ header{
     height: 100%;
     max-width: 700px;
     max-height: 400px;
+    
 }
 
+.contenido-inicio .slider img{
+    /* max-width: 80%;
+    max-height: 80%; */
+    border-radius: 10px;
+}
+
+.contenido-inicio .carousel-inner{
+    /* background-color: red; */
+}
+
+.contenido-inicio .carousel-control-prev:hover{
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 8px 0 0 8px;
+}
+.contenido-inicio .carousel-control-next:hover{
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 0 8px 8px 0;
+}
+.contenido-inicio .carousel-control-prev .carousel-control-prev-icon{
+    color: rebeccapurple;
+}
+.contenido-inicio .carousel-control-prev-icon{
+    color: #4357ad;
+}
+.contenido-inicio .slider .carousel-inner{
+    padding: 5px;
+}
