@@ -1,0 +1,1 @@
+<h2>Vista Datos generales</h2>

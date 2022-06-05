@@ -15,29 +15,35 @@ class app{
 
     private static string $name_seccion = "";
 
-    /** 
-     * Carga la configuración inicial de la pagina
-     */
-    static function loadData():void{
+    
+    static function run():void {
+        
 
-        self::$menu_list = [
-            (new MenuItem('Blog', 'fa fa-briefcase', '')),
-            (new MenuItem('Servicios', 'fa fa-home', 'servicios')),
-            (new MenuItem('Eventos', 'fa fa-briefcase', 'eventos')),
-            (new MenuItem('Iniciar sesión', 'fa fa-briefcase', 'autenticar')),
-            (new MenuItem('Registros', 'fa fa-briefcase', 'registro')),
-        ];
+        // Validmos el la sesión
+        if (session_status() != 2) session_start();
+        
 
-        self::$css_list[] = "public/css/pages/.globales.css";
+        // self::echo_json(self::esta_logeado());
 
+        if (!self::esta_logeado() && ($_GET['url'] ?? '') != "login" && ($_GET['url'] ?? '') != "registrarse"){
+            self::ir_a('login');
+        }
+        
+        if (db::connect()){
+            
+        }else{
+            self::send_message("Error con la conexión de la base de datos\nRevise los datos de conexion");
+        }
+        
+        require __DIR__ . '/run.php';
     }
-
-
-    static function requiere(string $path){
-        require "src/$path";
+    
+    static function send_message(string $message):void{
+        $_ENV['app-message'] = $message;
     }
 
     static function requiere_view(string $path){
+
         $app_path_view = "src/Views/Pages/$path.view.php";
 
         $app_path_css = "public/css/pages/$path.css";
@@ -49,7 +55,7 @@ class app{
             self::$css_list[] = $app_path_css;
         }
 
-        require __DIR__. "/Views/body.php";
+        require __DIR__. "/Views/index.php";
     }
 
     /**
@@ -59,6 +65,12 @@ class app{
         return self::$menu_list;
     }
 
+    /**
+     * Retorna true si el usuario a inicaod sesión
+     */
+    static function esta_logeado():bool{
+        return ($_SESSION['usuario'] ?? false);
+    }
 
     /**
      * @return string[]
@@ -73,6 +85,12 @@ class app{
 
     static function echo_json($value):void{
         header('Content-type: application/json');
-        echo json_encode($value); exit;
+        echo json_encode($value, 128); exit;
+    }
+
+    static function ir_a(string $vista):void{
+        $path = router::generar_ruta_abosoluta($vista);
+        header("Location: $path");
+        exit();
     }
 }

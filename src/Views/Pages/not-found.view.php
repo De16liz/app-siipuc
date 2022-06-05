@@ -1,1 +1,1 @@
-<h1>Ruta erronea</h1>
+<h2>Ruta erronea</h2>

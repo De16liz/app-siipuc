@@ -1,10 +1,7 @@
-<?php use App\app; ?>
+<?php use App\{app, html}; ?>
 
 <!-- Estilos por defecto -->
-<link rel="stylesheet" href="<?php  \App\html::echo_css_path("body") ?>">
-<link rel="stylesheet" href="<?php  \App\html::echo_css_path("bootstrap.min") ?>">
-<link rel="stylesheet" href="<?php  \App\html::echo_css_path("estilos") ?>">
-<link rel="stylesheet"  href="<?php  \App\html::echo_css_path("fonts") ?>">
+<link rel="stylesheet" href="<?php  html::echo_css_path("globales") ?>">
 
 <!-- Esta en la cabezara con los css -->
 <script src=" <?php  \App\html::echo_js_path("jssor.slider.min") ?>" ></script>

@@ -1,0 +1,54 @@
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header{
+    background:#4357ad;
+    /* color: white; */
+}
+.app-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.app-header a{
+    color: white;
+}
+.app-header a:hover{
+    color: white;
+}
+
+.app-header-nav-item a{
+    color: white;
+}
+
+
+/* .app-header-nav-item a:hover{
+    color: white;
+    transform: scale(1.4);
+    transition: all 0.3s;
+} */
+
+.app-header .nav-link{
+    color: white;
+}
+.app-header .dropdown-menu .dropdown-item{
+    color: black;
+}
+
+.app-header .nav-item .nav-link{
+    display: flex;
+    align-items: center;
+}
+
+.pg-login{
+    background-color: #4357ad;
+}
+
+.pg-login section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

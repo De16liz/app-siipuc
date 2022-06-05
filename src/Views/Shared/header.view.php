@@ -1,15 +1,59 @@
 <?php
-use App\app;
+use App\{app, html};
+
 ?>
 
-<nav class="menu">
-    <div class="logo">
-        <a href="#"><img src="public/img/ipuc.png" alt=""></a>
-        <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
+<div class="app-header">
+
+    <div class="app-header-icon">
+        <a href="#">
+            <img src="<?php html::echo_img_path('ipuc.png') ?>" alt="">
+        </a>
     </div>
-    <div class="enlaces" id="enlaces">
-        <?php foreach (app::get_menu() as $menu){ ?>
-            <a href="<?php $menu->echoLink() ?>"><i class="<?php $menu->echoICon() ?>" aria-hidden="true"></i><?php $menu->echoValue() ?></a>
-        <?php } ?>
-    </div>
-</nav>
+    <ul class="nav justify-content-end">
+        <!-- ************ Secretaria -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="material-icons">work</span>
+            <span>Secretaria</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('membresias') ?>">Membresias</a></li>
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('bautismos') ?>">Bautismos</a></li>
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('matrimonios') ?>">Matrimonios</a></li>
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('niñez') ?>">Niñez</a></li>
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('datos-generales') ?>">Datos generales</a></li>
+          </ul>
+        </li>
+
+        <!-- ************ Formato -->
+        <li class="nav-item app-header-nav-item">
+            <a class="nav-link" href="<?php html::echo_path_obsolute('formato') ?>">
+                <span class="material-icons">article</span>
+                <span>Formato</span>
+            </a>
+        </li>
+
+        <!-- ************ Servicios -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="material-icons">support_agent</span>
+            <span>Servicios</span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('eventos') ?>">Eventos</a></li>
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('circulares') ?>">Circulares</a></li>
+            <li><a class="dropdown-item" href="<?php html::echo_path_obsolute('actas-de-reuniones') ?>">Actas de reuniones</a></li>
+          </ul>
+        </li>
+
+        <!-- ************ Salir, inicar sesión, registrarse -->
+        <li class="nav-item app-header-nav-item">
+            <a class="nav-link disabled">
+                <span class="material-icons">logout</span>
+                <span>Cerrar sesión</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
