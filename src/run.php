@@ -6,6 +6,8 @@ use App\db;
 
 $url = trim($_GET['url'] ?? '', '/');
 
+$_ENV['app-protocol-http'] = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https' : 'http';
+
 // Validmos el la sesión
 if (session_status() != 2) session_start();
 
