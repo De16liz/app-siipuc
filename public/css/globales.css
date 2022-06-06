@@ -113,6 +113,7 @@ header{
 .pg-content{
     display: flex;
     justify-content: space-evenly;
+    padding: 5px 30px;
 }
 
 .pg-content .content-view{
