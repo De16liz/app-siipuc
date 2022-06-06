@@ -9,9 +9,9 @@ db::connect();
 $res = db::insert($_POST, 'presentacion_niños');
 
 if ($res){
-    // SI se regiostrp
-    echo "Si";
+    app::send_message("Registro con exito");
+    app::ir_a('niñez');
 }else{
-    // No se regiror
-    echo "No";
+    app::send_message("No registrado\nPor favor intentelo nuevamente");
+    app::ir_a('niñez');
 }

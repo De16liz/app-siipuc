@@ -11,9 +11,8 @@ $id = $_GET['id'];
 db::delete(' membresias', 'id=:id', [ 'id' => $id] );
 
 if ($res){
-    // SI se regiostrp
-    echo "Si";
+    app::ir_a('membresias');
 }else{
-    // No se regiror
-    echo "No";
+    app::send_message("No se borro el registro\nPor favor intentelo nuevamente");
+    app::ir_a('membresias');
 }
