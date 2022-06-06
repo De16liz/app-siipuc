@@ -39,16 +39,10 @@ create table `membresias` (
 drop table if exists `presentacion_niños`;
 create table `presentacion_niños` (
 	`id` int primary key auto_increment,
+	`nombre_menor` varchar(50) not null,
 	`fecha_nacimiento` date not null,
 	`nombre_padre` varchar(50) not null,
 	`nombre_madre` varchar(50) not null
-);
-
-drop table if exists `registros`;
-create table `registros` (
-	`id` int primary key auto_increment,
-	`rg_pastor` varchar(50) not null,
-	`rg_feligrez` varchar(50) not null
 );
 
 drop table if exists `usuarios`;

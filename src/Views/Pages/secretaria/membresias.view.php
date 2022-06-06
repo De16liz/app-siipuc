@@ -1,12 +1,16 @@
 <h2>Listado de personas</h2> <hr>
 
 <ul class="list-group">
-  <li class="list-group-item disabled">Cras justo odio</li>
+  <li class="list-group-item disabled">Cedula</li>
   <li class="list-group-item">Dapibus ac facilisis in</li>
   <li class="list-group-item">Morbi leo risus</li>
   <li class="list-group-item">Porta ac consectetur ac</li>
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
+<div class="modal-footer">
+        <button type="button" href="<?php App\html::echo_path('post/membresias-update')?>" class="btn btn-primary">Actualizar</button>
+        <button type="button" onclick="return confirm('Estas seguro de eliminar?');" href="<?php App\html::echo_path('post/membresias-borrar')?>" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+</div>
 
 
 <hr>

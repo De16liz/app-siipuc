@@ -9,9 +9,9 @@ db::connect();
 $res = db::insert($_POST, 'eventos');
 
 if ($res){
-    // SI se regiostrp
-    echo "Si";
+    app::send_message("Registro con exito");
+    app::ir_a('eventos');
 }else{
-    // No se regiror
-    echo "No";
+    app::send_message("No registrado\nPor favor intentelo nuevamente");
+    app::ir_a('eventos');
 }
