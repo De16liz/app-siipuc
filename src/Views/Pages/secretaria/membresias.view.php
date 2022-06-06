@@ -22,18 +22,17 @@ $res = db::query("SELECT * FROM membresias $where")->fetchAll(PDO::FETCH_OBJ);
 <!-- Panel de control -->
 <div style="display: flex; align-items: center; ">
 
-  <div class="input-group mb-3" style="width: 80%;">
+  <div class="input-group mb-3">
   <span class="input-group-text">Buscar nombre</span>
     <input id="input-buscar" type="text" class="form-control" placeholder="" aria-label="Example text with two button addons">
     <button class="btn btn-outline-secondary" type="button" onclick="buscar_nombre()" >Buscar</button>
-  </div>
-
-  <a type="button" class="btn btn btn-secundary" href="<?php App\html::echo_path('membresias') ?>">
-    Ver todos
-  </a>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="crear_membresia()">
+    <a type="button" class="btn btn btn-success" href="<?php App\html::echo_path('membresias') ?>">
+      Ver todos
+    </a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="crear_membresia()">
     Regitrar membresia
   </button>
+  </div>
 
 </div>
 
