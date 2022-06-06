@@ -39,7 +39,7 @@ $res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
       <td>
         <div class="modal-footer">
             <button type="button" href="<?php App\html::echo_path('post/membresias-update')?>" class="btn btn-primary">Editar</button>
-            <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="showDelete(<?php echo $dato->id ?>)">Borrar 2</button>
+            <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="showDelete(<?php echo $dato->id ?>)">Borrar</button>
         </div>
       </td>
     </tr>
@@ -63,7 +63,7 @@ $res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
         Una vez eliminado no podra modificar los datos
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" onclick="sendDelete()">Eliminar</button>
       </div>
     </div>
