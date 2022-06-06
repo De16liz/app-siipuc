@@ -6,7 +6,7 @@ $res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 <center><h2>Listado de personas</h2></center>
-
+<!-- ********************************** lista de las tablas ***************************** -->
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -48,7 +48,7 @@ $res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
     ?>
    </tbody>
 </table>
-
+<!-- ********************************** registro de datos ***************************** -->
 <hr>
 <div class="card-header">
     Ingresar datos:
