@@ -1,4 +1,4 @@
-<form class="card-body" method="POST">
+<form class="card-body" method="POST" action="<?php App\html::echo_path('post/prarmetros'); ?>">
      <!-- Input nombre de usuario -->
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">
