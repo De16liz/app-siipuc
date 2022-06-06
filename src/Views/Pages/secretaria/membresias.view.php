@@ -90,6 +90,6 @@
     <!-- ******************************* -->
     <!-- ************ Botones de control*************** -->
     <div class="d-grid gap-2">
-        <button type="button" class="btn btn-success">Registrar</button>
+        <button type="submit" class="btn btn-success">Registrar</button>
     </div>
 </form>

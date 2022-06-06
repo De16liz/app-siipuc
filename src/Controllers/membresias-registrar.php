@@ -10,8 +10,8 @@ $res = db::insert($_POST, 'membresias');
 
 if ($res){
     app::send_message("Registro con exito");
-    app::ir_a('membresias-view');
+    app::ir_a('membresias');
 }else{
     app::send_message("No registrado\nPor favor intentelo nuevamente");
-    app::ir_a('membresias-view');
+    app::ir_a('membresias');
 }
