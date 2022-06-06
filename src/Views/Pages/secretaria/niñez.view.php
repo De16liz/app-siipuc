@@ -1,5 +1,46 @@
-<h2>Vista de la niñez</h2>
+<?php 
 
+use App\db;
+db::connect();
+$res = db::query("SELECT * FROM presentacion_niños")->fetchAll(PDO::FETCH_OBJ);
+
+?>
+<h2>Vista de la niñez</h2>
+<!-- ********************************** lista de las tablas ***************************** -->
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre del menor</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Nombre del padre</th>
+      <th scope="col">Nombre de la Madre </th>
+      <th scope="col" colspan="2">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php 
+    foreach($res as $dato){ 
+  ?>
+    <tr>
+      <th scope="row"><?php echo $dato->id; ?></th>
+      <td><?php echo $dato->nombre_menor; ?></td>
+      <td><?php echo $dato->fecha_nacimiento; ?></td>
+      <td><?php echo $dato->nombre_padre; ?></td>
+      <td><?php echo $dato->nombre_madre; ?></td>
+      <td>
+        <div class="modal-footer">
+            <button type="button" href="<?php App\html::echo_path('post/membresias-update')?>" class="btn btn-primary">Editar</button>
+            <button type="button" onclick="return confirm('Estas seguro de eliminar?');" href="<?php App\html::echo_path('post/membresias-borrar')?>" class="btn btn-danger" data-dismiss="modal">Borrar</button>
+        </div>
+      </td>
+    </tr>
+    <?php 
+    }
+    ?>
+   </tbody>
+</table>
+<!-- ********************************** registro de datos ***************************** -->
 <div class="card-header">
     Ingresar datos:
 </div>

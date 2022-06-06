@@ -1,18 +1,54 @@
-<h2>Listado de personas</h2> <hr>
+<?php 
 
-<ul class="list-group">
-  <li class="list-group-item disabled">Cedula</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul>
-<div class="modal-footer">
-        <button type="button" href="<?php App\html::echo_path('post/membresias-update')?>" class="btn btn-primary">Actualizar</button>
-        <button type="button" onclick="return confirm('Estas seguro de eliminar?');" href="<?php App\html::echo_path('post/membresias-borrar')?>" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
-</div>
+use App\db;
+db::connect();
+$res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
 
-
+?>
+<center><h2>Listado de personas</h2></center>
+<!-- ********************************** lista de las tablas ***************************** -->
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cedula</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Nacimiento</th>
+      <th scope="col">Estado civil</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Barrio</th>
+      <th scope="col">Profesion</th>
+      <th scope="col" colspan="2">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php 
+    foreach($res as $dato){ 
+  ?>
+    <tr>
+      <th scope="row"><?php echo $dato->id; ?></th>
+      <td><?php echo $dato->cedula; ?></td>
+      <td><?php echo $dato->nombre; ?></td>
+      <td><?php echo $dato->nacimiento; ?></td>
+      <td><?php echo $dato->ec; ?></td>
+      <td><?php echo $dato->telefono; ?></td>
+      <td><?php echo $dato->direccion; ?></td>
+      <td><?php echo $dato->barrio; ?></td>
+      <td><?php echo $dato->profesion; ?></td>
+      <td>
+        <div class="modal-footer">
+            <button type="button" href="<?php App\html::echo_path('post/membresias-update')?>" class="btn btn-primary">Editar</button>
+            <button type="button" onclick="return confirm('Estas seguro de eliminar?');" href="<?php App\html::echo_path('post/membresias-borrar')?>" class="btn btn-danger" data-dismiss="modal">Borrar</button>
+        </div>
+      </td>
+    </tr>
+    <?php 
+    }
+    ?>
+   </tbody>
+</table>
+<!-- ********************************** registro de datos ***************************** -->
 <hr>
 <div class="card-header">
     Ingresar datos:
