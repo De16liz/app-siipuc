@@ -108,3 +108,23 @@ header{
 .contenido-inicio .slider .carousel-inner{
     padding: 5px;
 }
+
+
+.pg-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pg-content .content-view{
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+.tabla-mebresias tr td{
+    text-transform: capitalize;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}

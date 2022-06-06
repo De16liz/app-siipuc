@@ -33,7 +33,9 @@
 
     <!-- Sección amostrar por vista -->
     <section class="pg-content">
+        <div class="content-view">
         <?php require $app_path_view ?>
+        </div>
     </section>
 
     <footer>
