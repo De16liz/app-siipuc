@@ -1,4 +1,10 @@
+<?php 
 
+use App\db;
+db::connect();
+$res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
+
+?>
 <center><h2>Listado de personas</h2></center>
 
 <table class="table">
@@ -17,18 +23,19 @@
     </tr>
   </thead>
   <tbody>
-  
+  <?php 
+    foreach($res as $dato){ 
+  ?>
     <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row"><?php echo $dato->id; ?></th>
+      <td><?php echo $dato->cedula; ?></td>
+      <td><?php echo $dato->nombre; ?></td>
+      <td><?php echo $dato->nacimiento; ?></td>
+      <td><?php echo $dato->ec; ?></td>
+      <td><?php echo $dato->telefono; ?></td>
+      <td><?php echo $dato->direccion; ?></td>
+      <td><?php echo $dato->barrio; ?></td>
+      <td><?php echo $dato->profesion; ?></td>
       <td>
         <div class="modal-footer">
             <button type="button" href="<?php App\html::echo_path('post/membresias-update')?>" class="btn btn-primary">Editar</button>
@@ -36,7 +43,9 @@
         </div>
       </td>
     </tr>
-    
+    <?php 
+    }
+    ?>
    </tbody>
 </table>
 
