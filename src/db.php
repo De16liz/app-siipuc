@@ -28,6 +28,7 @@ class db
         } catch (\Throwable $th) {
             //throw $th;
             $_ENV['pdo-error'] = $th;
+            $_ENV['pdo-error-message'] =  $th->getMessage();
             return false;
         }
         if ($stmt){
