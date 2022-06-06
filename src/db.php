@@ -57,7 +57,7 @@ class db
 
     public static function delete(string $table, string $condition, array $values = null){
 
-        return self::query("DELETE $table WHERE $condition", $values);
+        return self::query("DELETE FROM $table WHERE $condition", $values);
     }
 
     public static function uptdate(string $table, array $params, array $condition){
