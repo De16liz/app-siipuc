@@ -80,7 +80,7 @@ class db
 
         $w = self::format_sql_where($condition[0]);
 
-        return self::query("UPDATE $table SET $values WHERE $w", $params);
+        return self::query("UPDATE FROM $table SET $values WHERE $w", $params);
     }
 
     private static function format_sql_where(string $condition):string{
