@@ -39,7 +39,7 @@ $res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
       <td>
         <div class="modal-footer">
             <button type="button" href="<?php App\html::echo_path('post/membresias-update')?>" class="btn btn-primary">Editar</button>
-            <button type="button" onclick="return confirm('Estas seguro de eliminar?');" href="<?php App\html::echo_path('post/membresias-borrar')?>" class="btn btn-danger" data-dismiss="modal">Borrar</button>
+            <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="showDelete(<?php echo $dato->id ?>)">Borrar 2</button>
         </div>
       </td>
     </tr>
@@ -48,6 +48,42 @@ $res = db::query("SELECT * FROM membresias")->fetchAll(PDO::FETCH_OBJ);
     ?>
    </tbody>
 </table>
+<!-- *********************************************************************************** -->
+<!-- ********************************** Dialogo de bootrap ***************************** -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">¿Estas seguro de eliminar?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Una vez eliminado no podra modificar los datos
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="sendDelete()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- *********************************************************************************** -->
+
+<script>
+    var id = -1;
+    function showDelete(i){
+        id = i
+    }
+
+    function sendDelete(){
+        window.location.href = "<?php App\html::echo_path('post/membresias-borrar') ?>?id=" + id;
+    }
+</script>
+
+
 <!-- ********************************** registro de datos ***************************** -->
 <hr>
 <div class="card-header">

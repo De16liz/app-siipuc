@@ -3,12 +3,12 @@
 use App\app;
 use App\db;
 
-$res = db::connect();
+db::connect();
 
 $id = $_GET['id'];
 
 //app::echo_json($_POST);
-db::delete(' membresias', 'id=:id', [ 'id' => $id] );
+$res = db::delete(' membresias', 'id=:id', [ 'id' => $id] );
 
 if ($res){
     app::ir_a('membresias');
